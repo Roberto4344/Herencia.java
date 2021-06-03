@@ -13,6 +13,8 @@ public class Persona {
 	private String Apellido1;
 	private String Apellido2;
 	private int Edad;
+	private int telefono;
+
 	private boolean Alta;
 	Scanner sc = new Scanner(System.in);
 	
@@ -54,14 +56,30 @@ public class Persona {
 			edad=Edad;
 		} catch (InputMismatchException e) {
 			sc.next();
-			System.out.println(e.getMessage());
 			System.out.println("tiene que ser numero entero");
 		}
 	}
 //Metodo para dar de baja o alta
 	
-	public boolean altaBaja() {
-		Alta=!Alta;
+	public boolean alta() {
+		Alta=true;
 		return Alta;
 	}
+	
+	public boolean baja() {
+		Alta=false;
+		return Alta;
+	}
+	
+//Metodos para telefono
+	
+	public int getTelefono() {
+		return telefono;
+	}
+
+	public void setTelefono(int telefono) {
+		this.telefono = telefono;
+	}
 }
+
+
