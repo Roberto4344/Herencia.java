@@ -9,18 +9,17 @@ import java.util.Scanner;
 
 public class Persona {
 
-	private String Nombre;
+	private static String Nombre;
 	private String Apellido1;
 	private String Apellido2;
 	private int Edad;
-	private int telefono;
 
 	private boolean Alta;
 	Scanner sc = new Scanner(System.in);
 	
 //Metodos para Nombre y Apellidos
 	
-	public String getNombre() {
+	public static String getNombre() {
 		return Nombre;
 	}
 	
@@ -52,8 +51,8 @@ public class Persona {
 	public void setEdad() {
 		try {
 			System.out.println("Introduce la Edad");
-			int edad = sc.nextInt();
-			edad=Edad;
+			Edad = sc.nextInt();
+			
 		} catch (InputMismatchException e) {
 			sc.next();
 			System.out.println("tiene que ser numero entero");
@@ -71,15 +70,6 @@ public class Persona {
 		return Alta;
 	}
 	
-//Metodos para telefono
-	
-	public int getTelefono() {
-		return telefono;
-	}
-
-	public void setTelefono(int telefono) {
-		this.telefono = telefono;
-	}
 }
 
 

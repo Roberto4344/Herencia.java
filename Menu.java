@@ -1,4 +1,4 @@
-import java.util.InputMismatchException;
+
 import java.util.Scanner;
 
 public class Menu {
@@ -7,17 +7,16 @@ public class Menu {
 		boolean fin = true;
 		do {
 			System.out.println("-----------------INTRODUCE------------------------");
-			System.out.println("-- 1 AgegarSocio       2       3  --");
-			System.out.println("-- 4   5     6      --");
-			System.out.println("-- 7     8        9  Salir        --");
+			System.out.println("-- 1 AgegarSocio       2 Leer Archivo  3 Ver Empleados     0 salir  --");
 			System.out.println("--------------------------------------------------");
 			int opcion = sc.nextInt();
 			
 
 			switch (opcion) {
 
-
+//Aqui agregamos un socio nuevo
 			case 1:
+				new Socio();
 				break;
 
 		
@@ -66,7 +65,7 @@ public class Menu {
 			 * Nos permite salir del programa
 			 */
 
-			case 9:
+			case 0:
 
 				fin = false;
 

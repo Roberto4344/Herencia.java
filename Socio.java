@@ -12,31 +12,30 @@ import java.util.Date;
  */
 
 public class Socio extends Persona {
-	
-	private static ArrayList<String> texto;
-private ArrayList<String> socios;
-private static String fecha=new SimpleDateFormat("dd-MM-yyyy - HHmm").format(new Date());;
-private static int NumSocio;
 
-	
+	private static ArrayList<String> texto;
+	private ArrayList<String> socios;
+	private static String fecha = new SimpleDateFormat("dd-MM-yyyy - HHmm").format(new Date());;
+	private static int NumSocio;
+	private static double cuota = 30.00;
 
 	public int getNumSocio() {
 		return NumSocio;
 	}
+
 	public void setNumSocio() {
-		NumSocio =socios.size()+1;
+		NumSocio = socios.size() + 1;
 	}
-	/*
-	 * Escribe el archivo '.txt' con los datos del ArrayList 'aEscribir'
-	 */
+
+	/** Escribe el archivo '.txt' con los datos del ArrayList 'aEscribir' */
 	public static void escribirFichero() {
 
 		FileWriter fichero = null;
 		PrintWriter pw = null;
 
 		try {
-			
-			fichero = new FileWriter(NumSocio + " " + get.nombre()+" "+ fecha + ".txt");
+
+			fichero = new FileWriter(NumSocio + " " + Persona.getNombre() + ".txt");
 			pw = new PrintWriter(fichero);
 
 			for (int i = 0; i < texto.size(); i++) {
@@ -55,5 +54,14 @@ private static int NumSocio;
 		} catch (IOException e) {
 			System.out.println("Se ha producido un error al cerrar el fichero");
 		}
+	}
+
+	public static double getCuota() {
+		return cuota;
+	}
+
+	public static double setCuota(double cuota) {
+		Socio.cuota = cuota;
+		return cuota;
 	}
 }
