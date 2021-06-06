@@ -34,7 +34,7 @@ public class Menu {
 			case 1:
 				int edad = 0;
 				System.out.println("Introduce el nombre");
-				sc.next(); // Este next es super importante ya que sino nos da un fallo ,ya que coge el 1
+				sc.nextLine(); // Este next es super importante ya que sino nos da un fallo ,ya que coge el 1
 							// de switch como parametro
 				String nombre = sc.nextLine();
 
