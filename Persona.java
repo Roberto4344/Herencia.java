@@ -1,75 +1,87 @@
-import java.util.InputMismatchException;
-import java.util.Scanner;
-
 /**
  * 
  * @author Roberto Abad
  *
  */
 
-public class Persona {
+public abstract class Persona {
 
-	private static String Nombre;
-	private String Apellido1;
-	private String Apellido2;
+	private int id;
+	private String nombre;
+	private String apellido1;
+	private String apellido2;
+	private String dni;
+	private boolean alta;
 	private int Edad;
 
-	private boolean Alta;
-	Scanner sc = new Scanner(System.in);
-	
-//Metodos para Nombre y Apellidos
-	
-	public static String getNombre() {
-		return Nombre;
+	public Persona(){
 	}
-	
+
+	public Persona(int id, String nombre, String apellido1, String apellido2, String dni, boolean alta, int edad) {
+		this.id = id;
+		this.nombre = nombre;
+		this.apellido1 = apellido1;
+		this.apellido2 = apellido2;
+		this.dni = dni;
+		this.alta = alta;
+		Edad = edad;
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public String getNombre() {
+		return nombre;
+	}
+
 	public void setNombre(String nombre) {
-		Nombre = nombre;
+		this.nombre = nombre;
 	}
 
 	public String getApellido1() {
-		return Apellido1;
+		return apellido1;
 	}
 
 	public void setApellido1(String apellido1) {
-		Apellido1 = apellido1;
+		this.apellido1 = apellido1;
 	}
 
 	public String getApellido2() {
-		return Apellido2;
+		return apellido2;
 	}
 
 	public void setApellido2(String apellido2) {
-		Apellido2 = apellido2;
+		this.apellido2 = apellido2;
 	}
-// Metodo para Edad
-	
+
+	public String getDni() {
+		return dni;
+	}
+
+	public void setDni(String dni) {
+		this.dni = dni;
+	}
+
+	public boolean isAlta() {
+		return alta;
+	}
+
+	public void setAlta(boolean alta) {
+		this.alta = alta;
+	}
+
 	public int getEdad() {
 		return Edad;
 	}
 
-	public void setEdad() {
-		try {
-			System.out.println("Introduce la Edad");
-			Edad = sc.nextInt();
-			
-		} catch (InputMismatchException e) {
-			sc.next();
-			System.out.println("tiene que ser numero entero");
-		}
+	public void setEdad(int edad) {
+		Edad = edad;
 	}
-//Metodo para dar de baja o alta
-	
-	public boolean alta() {
-		Alta=true;
-		return Alta;
-	}
-	
-	public boolean baja() {
-		Alta=false;
-		return Alta;
-	}
-	
 }
 
 
