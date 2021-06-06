@@ -1,6 +1,9 @@
 # Herencia
 Ejercicio de Herencia y Polimorfismo
 
+Lo primero y mas importante modificar el archivo de constantes a la ruta del pec que estemos utilizando para escribir
+Leer y guardar los datos en un .txt
+
 En un gimnasio se quiere crear un programa para tener los datos de los EMPLEADOS y de los SOCIOS por lo cual se van a desarrollar un conjunto de clases que representen dicho gimnasio, se describen las características básicas de estas clases: 
 1.Persona.  Clase abstracta la cual tiene los datos comunes de todos que son   sus datos personales (id, nombre, apellidos, DNI, dirección, teléfono, fecha de alta. 
 •Constructores para definir correctamente un empleado y socio, a partir de su nombre, apellidos, DNI,Alta
