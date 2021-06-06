@@ -35,28 +35,28 @@ public class Menu {
 				int edad = 0;
 				System.out.println("Introduce el nombre");
 				String nombre = sc.nextLine();
-				
+
 				System.out.println("Introduce el apellido1");
 				String apellido1 = sc.nextLine();
-				
+
 				System.out.println("Introduce el apellido2");
 				String apellido2 = sc.nextLine();
-				
+
 				System.out.println("Introduce el dni");
 				String dni = sc.nextLine();
-				
+
 				try {
 					System.out.println("Introduce la Edad");
 					edad = sc.nextInt();
-					
+
 				} catch (InputMismatchException e) {
 					sc.next();
 					System.out.println("tiene que ser numero entero");
-				
+
 				}
-				
+
 				crearSocio(nombre, apellido1, apellido2, dni, edad);
-				
+
 				break;
 
 			/** Aqui nos muestra los socios con los datos que queremos de el */
@@ -88,7 +88,7 @@ public class Menu {
 
 				break;
 			}
-		} while (fin != false);
+		} while (fin);
 		System.out.println("Hasta luego");
 	}
 
@@ -113,10 +113,9 @@ public class Menu {
 
 	private void cargarSocios() {
 		String linea;
-
+		// MUY IMPORTANTE CAMBIAR LA RUTA DE CONSTANTES SI USAS UN PC DISTINTO
 		try {
 			BufferedReader bufferedReader = new BufferedReader(
-					// MUY IMPORTANTE CAMBIAR LA RUTA DE CONSTANTES SI USAS UN PC DISTINTO
 					new FileReader(Constantes.rutaAbsolutaFichero + Constantes.nombreFichero));
 
 			while ((linea = bufferedReader.readLine()) != null) {
