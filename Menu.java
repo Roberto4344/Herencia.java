@@ -15,7 +15,7 @@ public class Menu {
 
 	private List<Persona> listaPersonas; // Una lista donde agregamos a todas las personas
 
-	Scanner sc = new Scanner(System.in);
+	 public Scanner sc = new Scanner(System.in);
 
 	public void menu() {
 		cargarTrabajadores(); // Invoca el metodo que crea los 3 trabajadores que tenemos
@@ -34,8 +34,9 @@ public class Menu {
 			case 1:
 				int edad = 0;
 				System.out.println("Introduce el nombre");
+				sc.next();
 				String nombre = sc.nextLine();
-
+ 
 				System.out.println("Introduce el apellido1");
 				String apellido1 = sc.nextLine();
 
@@ -74,7 +75,7 @@ public class Menu {
 
 				System.out.println("Introduce el ID del socio");
 				int id = sc.nextInt();
-				editarSocio(id);
+				editarSocio(id-1);
 
 				break;
 
