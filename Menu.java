@@ -15,7 +15,7 @@ public class Menu {
 
 	private List<Persona> listaPersonas; // Una lista donde agregamos a todas las personas
 
-	 public Scanner sc = new Scanner(System.in);
+	public Scanner sc = new Scanner(System.in); // Aqui creamos el scaner
 
 	public void menu() {
 		cargarTrabajadores(); // Invoca el metodo que crea los 3 trabajadores que tenemos
@@ -34,9 +34,10 @@ public class Menu {
 			case 1:
 				int edad = 0;
 				System.out.println("Introduce el nombre");
-				sc.next();
+				sc.next(); // Este next es super importante ya que sino nos da un fallo ,ya que coge el 1
+							// de switch como parametro
 				String nombre = sc.nextLine();
- 
+
 				System.out.println("Introduce el apellido1");
 				String apellido1 = sc.nextLine();
 
@@ -75,7 +76,7 @@ public class Menu {
 
 				System.out.println("Introduce el ID del socio");
 				int id = sc.nextInt();
-				editarSocio(id-1);
+				editarSocio(id - 1);
 
 				break;
 
@@ -124,7 +125,7 @@ public class Menu {
 
 				Socio socio = new Socio();
 
-				for (int i = 0; i < 8; i++) {
+				for (int i = 0; i < 8; i++) { // itera por cada una de las variables que tenemos
 					switch (i) {
 					case 0:
 						socio.setId(Integer.parseInt(split[0]));
@@ -160,7 +161,7 @@ public class Menu {
 					}
 				}
 
-				listaPersonas.add(socio);
+				listaPersonas.add(socio); // lo añade a nuestra lista
 			}
 
 			bufferedReader.close();
@@ -183,7 +184,7 @@ public class Menu {
 					String lineaFichero = persona.getId() + ";" + persona.getNombre() + ";" + persona.getApellido1()
 							+ ";" + persona.getApellido2() + ";" + persona.getDni() + ";" + (persona.isAlta() ? 1 : 0)
 							+ ";" + persona.getEdad() + ";" + ((Socio) persona).getCuota() + ";";
-					fileWriter.write(lineaFichero);
+					fileWriter.write(lineaFichero + "\n");
 				}
 			}
 
@@ -193,6 +194,7 @@ public class Menu {
 		}
 	}
 
+	/** Aqui tenemos el constructor socio */
 	private void crearSocio(String nombre, String apellido1, String apellido2, String dni, int edad) {
 		Socio socio = new Socio(listaPersonas.size() + 1, nombre, apellido1, apellido2, dni, true, edad, 30.00);
 		listaPersonas.add(socio);

@@ -16,7 +16,7 @@ public abstract class Persona {
 
 	public Persona(){
 	}
-
+/** Constructor de persona*/
 	public Persona(int id, String nombre, String apellido1, String apellido2, String dni, boolean alta, int edad) {
 		this.id = id;
 		this.nombre = nombre;
@@ -26,7 +26,7 @@ public abstract class Persona {
 		this.alta = alta;
 		Edad = edad;
 	}
-
+/** Los getter y sett de cada atributo*/
 	public int getId() {
 		return id;
 	}
